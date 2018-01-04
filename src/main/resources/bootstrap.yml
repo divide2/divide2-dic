@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: dicservice
+  profiles:
+    active:
+      home
+  cloud:
+    config:
+      enabled: true
