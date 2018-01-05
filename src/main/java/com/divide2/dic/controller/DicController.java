@@ -2,6 +2,8 @@ package com.divide2.dic.controller;
 
 import com.divide2.dic.model.Dic;
 import com.divide2.dic.service.DicService;
+import com.divide2.dic.service.impl.DicServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -20,12 +22,11 @@ import java.util.List;
 public class DicController {
 
     @Resource
-    private DicService dicService;
+    private DicService dicServiceImpl;
 
     @GetMapping("/list")
-    @PutMapping
     public ResponseEntity<List<Dic>> list() {
-        return ResponseEntity.ok(dicService.findAll());
+        return ResponseEntity.ok(dicServiceImpl.findAll());
     }
 
 
