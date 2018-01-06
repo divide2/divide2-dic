@@ -1,2 +1,5 @@
-include::{snippets}/dic/http-request.adoc[]
-include::{snippets}/dic/http-response.adoc[]
+include::{snippets}/dic/list/http-request.adoc[]
+include::{snippets}/dic/list/http-response.adoc[]
+include::{snippets}/dic/get/http-request.adoc[]
+include::{snippets}/dic/get/http-response.adoc[]
+include::{snippets}/dic/get/response-fields.adoc[]

@@ -53,16 +53,20 @@ public class DicControllerTest {
     public void testList() throws Exception {
         mockMvc.perform(get("/v1/dic/list"))
                 .andExpect(status().isOk())
-                .andDo(document("dic"));
+                .andDo(document("dic/list"));
     }
 
     @Test
     public void testGet() throws Exception {
         mockMvc.perform(get("/v1/dic/1"))
                 .andExpect(status().isOk())
-                .andDo(document("dic", responseFields(
-                        fieldWithPath("cnLabel").description("The user's contact details"),
-                        fieldWithPath("contact.email").description("The user's email address"))));
+                .andDo(document("dic/get", responseFields(
+                        fieldWithPath("cnLabel").description("cnLabel"),
+                        fieldWithPath("groupName").description("groupName"),
+                        fieldWithPath("groupCode").description("groupCode"),
+                        fieldWithPath("enLabel").description("enLabel"),
+                        fieldWithPath("code").description("code"),
+                        fieldWithPath("id").description("id"))));
 
     }
 
