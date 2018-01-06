@@ -1,0 +1,2 @@
+include::{snippets}/dic/http-request.adoc[]
+include::{snippets}/dic/http-response.adoc[]

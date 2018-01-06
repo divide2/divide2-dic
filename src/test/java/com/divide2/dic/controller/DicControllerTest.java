@@ -12,8 +12,12 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import static org.springframework.restdocs.hypermedia.HypermediaDocumentation.linkWithRel;
+import static org.springframework.restdocs.hypermedia.HypermediaDocumentation.links;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
+import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
+import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -50,6 +54,15 @@ public class DicControllerTest {
         mockMvc.perform(get("/v1/dic/list"))
                 .andExpect(status().isOk())
                 .andDo(document("dic"));
+    }
+
+    @Test
+    public void testGet() throws Exception {
+        mockMvc.perform(get("/v1/dic/1"))
+                .andExpect(status().isOk())
+                .andDo(document("dic", responseFields(
+                        fieldWithPath("cnLabel").description("The user's contact details"),
+                        fieldWithPath("contact.email").description("The user's email address"))));
 
     }
 

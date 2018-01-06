@@ -32,6 +32,8 @@ public class DicServiceImpl implements DicService {
     public List<Dic> findAll() {
         return dicRepository.findAll();
     }
-
-
+    @Override
+    public Dic get(Long id) {
+        return dicRepository.findOne(id);
+    }
 }

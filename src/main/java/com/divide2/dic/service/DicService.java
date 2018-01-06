@@ -16,4 +16,5 @@ public interface DicService {
 
     List<Dic> findAll();
 
+    Dic get(Long id);
 }
