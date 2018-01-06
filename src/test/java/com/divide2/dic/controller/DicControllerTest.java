@@ -58,6 +58,7 @@ public class DicControllerTest {
 
     @Test
     public void testGet() throws Exception {
+
         mockMvc.perform(get("/v1/dic/1"))
                 .andExpect(status().isOk())
                 .andDo(document("dic/get", responseFields(
