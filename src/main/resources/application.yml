@@ -18,6 +18,12 @@ logging:
 spring:
   jpa:
     database: mysql
+
+pro:
+  lang: cn
+
+
+
 #eureka:
 #  instance:
 #    preferIpAddress: true

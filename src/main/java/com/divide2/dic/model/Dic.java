@@ -21,7 +21,7 @@ public class Dic {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Integer id;
 
     @Column(name = "group_name")
     private String groupName;
