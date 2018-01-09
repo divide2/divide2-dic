@@ -26,7 +26,6 @@ public class LabelController {
         return Responser.ok(labelServiceImpl.all());
     }
 
-
     @GetMapping("{id}")
     public ResponseEntity<Label> get(@PathVariable Integer id) {
         return Responser.ok(labelServiceImpl.get(id));

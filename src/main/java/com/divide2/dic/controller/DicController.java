@@ -4,6 +4,9 @@ import com.divide2.constant.Responser;
 import com.divide2.constant.ReturnCoder;
 import com.divide2.dic.model.Dic;
 import com.divide2.dic.service.DicService;
+import com.divide2.search.SearchQuery;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,4 +52,8 @@ public class DicController {
         return Responser.update();
     }
 
+    @GetMapping("/page")
+    public ResponseEntity<Page<Dic>> page(SearchQuery query, Pageable pageable) {
+        return Responser.ok(dicServiceImpl.page(pageable));
+    }
 }
