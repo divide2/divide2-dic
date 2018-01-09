@@ -1,5 +1,6 @@
 package com.divide2.dic.controller;
 
+import com.divide2.constant.ReturnCoder;
 import com.divide2.dic.model.Dic;
 import com.divide2.dic.service.DicService;
 import org.springframework.http.ResponseEntity;
@@ -7,6 +8,10 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+
+import static com.divide2.constant.ReturnCoder.ADD_SUCCESS;
+import static com.divide2.constant.ReturnCoder.DELETE_SUCCESS;
+import static com.divide2.constant.ReturnCoder.UPDATE_SUCCESS;
 
 /**
  * Created by bvvy on 2018/1/4.
@@ -17,36 +22,36 @@ import java.util.List;
 public class DicController {
 
     @Resource
-    private DicService dicServiceImpl;
+    private DicService dicService;
 
     @GetMapping("/all")
     public ResponseEntity<List<Dic>> all() {
-        return ResponseEntity.ok(dicServiceImpl.all());
+        return ResponseEntity.ok(dicService.all());
     }
 
 
     @GetMapping("{id}")
     public ResponseEntity<Dic> get(@PathVariable Integer id) {
-        return ResponseEntity.ok(dicServiceImpl.get(id));
+        return ResponseEntity.ok(dicService.get(id));
     }
 
-    @DeleteMapping("${id")
-    public ResponseEntity<String> delete(@PathVariable Integer id) {
-        dicServiceImpl.delete(id);
-        return ResponseEntity.ok("删除成功");
+    @DeleteMapping("{id}")
+    public ResponseEntity<ReturnCoder> delete(@PathVariable Integer id) {
+        dicService.delete(id);
+        return ResponseEntity.ok(DELETE_SUCCESS);
     }
 
     @PostMapping
-    public ResponseEntity<String> add(@RequestBody Dic dic) {
-        dicServiceImpl.add(dic);
-        return ResponseEntity.ok("添加成功");
+    public ResponseEntity<ReturnCoder> add(@RequestBody Dic dic) {
+        dicService.add(dic);
+        return ResponseEntity.ok(ADD_SUCCESS);
     }
 
     @PatchMapping
-    public ResponseEntity<String> update(@RequestBody Dic dic) {
+    public ResponseEntity<ReturnCoder> update(@RequestBody Dic dic) {
 
-        dicServiceImpl.update(dic);
-        return ResponseEntity.ok("修改成功");
+        dicService.update(dic);
+        return ResponseEntity.ok(UPDATE_SUCCESS);
     }
 
 

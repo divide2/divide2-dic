@@ -10,9 +10,8 @@ import org.springframework.stereotype.Service;
  * Created by bvvy on 2018/1/4.
  * com.divide2.dic.service.impl
  */
-@Service
+@Service("dicService")
 public class DicServiceImpl extends BaseServiceImpl<Dic,Integer,DicRepository> implements DicService {
-
 
 
 }

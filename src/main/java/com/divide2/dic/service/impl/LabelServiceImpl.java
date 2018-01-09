@@ -10,8 +10,9 @@ import org.springframework.stereotype.Service;
  * Created by bvvy on 2018/1/7.
  * com.divide2.dic.service.impl
  */
-@Service
+@Service("labelService")
 public class LabelServiceImpl extends BaseServiceImpl<Label,Integer,LabelRepository> implements LabelService {
+
 
 
 }
