@@ -14,5 +14,4 @@ import org.springframework.stereotype.Service;
 public class DicServiceImpl extends BaseServiceImpl<Dic,Integer,DicRepository> implements DicService {
 
 
-
 }

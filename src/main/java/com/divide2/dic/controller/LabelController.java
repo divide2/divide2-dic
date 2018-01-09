@@ -23,16 +23,16 @@ public class LabelController {
 
     @GetMapping("/all")
     public ResponseEntity<List<Label>> all() {
-        return ResponseEntity.ok(labelServiceImpl.all());
+        return Responser.ok(labelServiceImpl.all());
     }
 
 
     @GetMapping("{id}")
     public ResponseEntity<Label> get(@PathVariable Integer id) {
-        return ResponseEntity.ok(labelServiceImpl.get(id));
+        return Responser.ok(labelServiceImpl.get(id));
     }
 
-    @DeleteMapping("${id")
+    @DeleteMapping("{id}")
     public ResponseEntity<ReturnCoder> delete(@PathVariable Integer id) {
         labelServiceImpl.delete(id);
         return Responser.delete();

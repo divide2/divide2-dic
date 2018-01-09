@@ -31,7 +31,7 @@ public class DicController {
         return ResponseEntity.ok(dicServiceImpl.get(id));
     }
 
-    @DeleteMapping("${id")
+    @DeleteMapping("{id}")
     public ResponseEntity<ReturnCoder> delete(@PathVariable Integer id) {
         dicServiceImpl.delete(id);
         return Responser.delete();
