@@ -1,5 +1,7 @@
 package com.divide2.dic.controller;
 
+import com.divide2.constant.Responser;
+import com.divide2.constant.ReturnCoder;
 import com.divide2.dic.model.Dic;
 import com.divide2.dic.service.DicService;
 import org.springframework.http.ResponseEntity;
@@ -24,30 +26,27 @@ public class DicController {
         return ResponseEntity.ok(dicServiceImpl.all());
     }
 
-
     @GetMapping("{id}")
     public ResponseEntity<Dic> get(@PathVariable Integer id) {
         return ResponseEntity.ok(dicServiceImpl.get(id));
     }
 
     @DeleteMapping("${id")
-    public ResponseEntity<String> delete(@PathVariable Integer id) {
+    public ResponseEntity<ReturnCoder> delete(@PathVariable Integer id) {
         dicServiceImpl.delete(id);
-        return ResponseEntity.ok("删除成功");
+        return Responser.delete();
     }
 
     @PostMapping
-    public ResponseEntity<String> add(@RequestBody Dic dic) {
+    public ResponseEntity<ReturnCoder> add(@RequestBody Dic dic) {
         dicServiceImpl.add(dic);
-        return ResponseEntity.ok("添加成功");
+        return Responser.created();
     }
 
     @PatchMapping
-    public ResponseEntity<String> update(@RequestBody Dic dic) {
-
+    public ResponseEntity<ReturnCoder> update(@RequestBody Dic dic) {
         dicServiceImpl.update(dic);
-        return ResponseEntity.ok("修改成功");
+        return Responser.update();
     }
-
 
 }

@@ -1,8 +1,9 @@
 package com.divide2.dic.controller;
 
+import com.divide2.constant.Responser;
+import com.divide2.constant.ReturnCoder;
 import com.divide2.dic.model.Label;
 import com.divide2.dic.service.LabelService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -32,21 +33,20 @@ public class LabelController {
     }
 
     @DeleteMapping("${id")
-    public ResponseEntity<String> delete(@PathVariable Integer id) {
+    public ResponseEntity<ReturnCoder> delete(@PathVariable Integer id) {
         labelServiceImpl.delete(id);
-        return ResponseEntity.ok("删除成功");
+        return Responser.delete();
     }
 
     @PostMapping
-    public ResponseEntity<String> add(@RequestBody Label label) {
+    public ResponseEntity<ReturnCoder> add(@RequestBody Label label) {
         labelServiceImpl.add(label);
-        return ResponseEntity.status(HttpStatus.CREATED).body("添加成功");
+        return Responser.created();
     }
     @PatchMapping
-    public ResponseEntity<String> update(@RequestBody Label label) {
-
+    public ResponseEntity<ReturnCoder> update(@RequestBody Label label) {
         labelServiceImpl.update(label);
-        return ResponseEntity.ok("修改成功");
+        return Responser.update();
     }
     
 }
