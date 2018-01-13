@@ -1,5 +1,6 @@
 package com.divide2.dic.query;
 
+import com.divide2.dic.model.Dic;
 import com.divide2.search.Queryer;
 import com.divide2.search.annotation.Conditioner;
 import com.divide2.search.annotation.SearchWay;
@@ -11,7 +12,7 @@ import lombok.Data;
  * com.divide2.dic.query
  */
 @Data
-@Searcher(indexName = "dic")
+@Searcher(indexClass = Dic.class)
 public class DicQuery implements Queryer {
 
     @Conditioner(way = SearchWay.RANGE, start = true)

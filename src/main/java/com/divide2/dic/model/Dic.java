@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
 
 import javax.persistence.*;
 
@@ -23,6 +24,7 @@ public class Dic {
 
     @Id
     @GeneratedValue
+    @org.springframework.data.annotation.Id
     private Integer id;
 
     @Column(name = "group_name")
