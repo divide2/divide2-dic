@@ -19,6 +19,7 @@ spring:
   jpa:
     database: mysql
 #eureka:
+
 #  instance:
 #    preferIpAddress: true
 #  client:

@@ -14,7 +14,6 @@ import lombok.Data;
 @Searcher(indexName = "dic")
 public class DicQuery implements Queryer {
 
-
     @Conditioner(way = SearchWay.RANGE, start = true)
     private Integer idStart;
 

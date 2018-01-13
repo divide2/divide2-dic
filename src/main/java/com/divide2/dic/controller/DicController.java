@@ -5,6 +5,8 @@ import com.divide2.constant.ReturnCoder;
 import com.divide2.dic.model.Dic;
 import com.divide2.dic.query.DicQuery;
 import com.divide2.dic.service.DicService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +22,7 @@ import java.util.List;
 @RequestMapping("/v1/dic")
 public class DicController {
 
+    private Logger logger = LoggerFactory.getLogger(DicController.class);
     @Resource
     private DicService dicServiceImpl;
 
@@ -53,6 +56,7 @@ public class DicController {
 
     @GetMapping("/page")
     public ResponseEntity<Page<Dic>> page(DicQuery query) {
+        logger.info("query args in page : {}", query);
         return Responser.ok(dicServiceImpl.search(query));
     }
 }
