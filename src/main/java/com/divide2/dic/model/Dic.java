@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
 
 import javax.persistence.*;
 
@@ -19,7 +18,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "sys_dic")
-@Document(indexName = "dic")
+@Document(indexName = "dics",type = "dic")
 public class Dic {
 
     @Id

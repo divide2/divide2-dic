@@ -1,6 +1,7 @@
 package com.divide2.dic.model;
 
 import lombok.Data;
+import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
 
@@ -11,10 +12,12 @@ import javax.persistence.*;
 @Table(name = "sys_label")
 @Entity
 @Data
+@Document(indexName = "labels",type = "label",refreshInterval = "-1")
 public class Label {
 
     @Id
     @GeneratedValue
+    @org.springframework.data.annotation.Id
     private Integer id;
 
     @Column(name = "cn_label")
