@@ -3,7 +3,6 @@ package com.divide2.dic.controller;
 import com.divide2.constant.Responser;
 import com.divide2.constant.ReturnCoder;
 import com.divide2.dic.model.Dic;
-import com.divide2.dic.query.DicQuery;
 import com.divide2.dic.service.DicService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by bvvy on 2018/1/4.
@@ -55,8 +55,8 @@ public class DicController {
     }
 
     @GetMapping("/page")
-    public ResponseEntity<Page<Dic>> page(DicQuery query) {
-        logger.info("query args in page : {}", query);
-        return Responser.ok(dicServiceImpl.search(query));
+    public ResponseEntity<Page<Dic>> page(Map<String,String> conditons) {
+        logger.info("query args in page : {}", conditons);
+        return Responser.ok(dicServiceImpl.search(conditons));
     }
 }

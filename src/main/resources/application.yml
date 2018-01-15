@@ -18,6 +18,9 @@ logging:
 spring:
   jpa:
     database: mysql
+  data:
+    elasticsearch:
+      cluster-nodes: 127.0.0.1:9300
 #eureka:
 
 #  instance:

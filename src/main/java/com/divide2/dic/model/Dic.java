@@ -1,5 +1,6 @@
 package com.divide2.dic.model;
 
+import com.divide2.search.annotation.Conditioner;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,7 +19,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "sys_dic")
-@Document(indexName = "dics",type = "dic")
+@Document(indexName = "dics",type = "dic",refreshInterval = "-1")
 public class Dic {
 
     @Id
@@ -28,6 +29,7 @@ public class Dic {
 
     @Column(name = "group_name")
     private String groupName;
+
 
     @Column(name = "group_code")
     private String groupCode;
