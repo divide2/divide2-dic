@@ -35,6 +35,7 @@ public class Dic {
 
 
     @Column(name = "group_code")
+    @Conditioner(way = SearchWay.LIKE)
     private String groupCode;
 
     @Column(name = "cn_label")

@@ -13,6 +13,8 @@ import org.springframework.data.elasticsearch.core.query.IndexQuery;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by bvvy on 2018/1/14.
@@ -29,12 +31,21 @@ public class TestDicSearch {
     private DicService dicService;
 
     @Test
-    public void testAdd() throws JsonProcessingException {
+    public void testAdd()  {
         IndexQuery indexQuery = new IndexQuery();
         for (Dic dic : dicService.all()) {
             indexQuery.setObject(dic);
             System.out.println(elasticsearchTemplate.index(indexQuery));
         }
+    }
+
+    @Test
+    public void testSearch() {
+        Map<String, String> map = new HashMap<>();
+        map.put("page", "0");
+        map.put("size", "10");
+        map.put("groupCode", "gen");
+        dicService.search(map).forEach(System.out::println);
 
     }
 }
