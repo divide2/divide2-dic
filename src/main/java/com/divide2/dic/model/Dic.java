@@ -1,6 +1,7 @@
 package com.divide2.dic.model;
 
 import com.divide2.search.annotation.Conditioner;
+import com.divide2.search.annotation.SearchWay;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,6 +26,7 @@ public class Dic {
     @Id
     @GeneratedValue
     @org.springframework.data.annotation.Id
+    @Conditioner(way = SearchWay.RANGE,startName = "idStart",endName = "idEnd")
     private Integer id;
 
     @Column(name = "group_name")

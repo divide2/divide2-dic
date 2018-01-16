@@ -13,7 +13,7 @@ import lombok.Data;
  */
 @Data
 @Searcher(indexClass = Dic.class)
-public class DicQuery implements Queryer {
+public class DicQuery  {
 
     private Integer idStart;
 

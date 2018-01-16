@@ -4,6 +4,7 @@ import com.divide2.constant.Responser;
 import com.divide2.constant.ReturnCoder;
 import com.divide2.dic.model.Dic;
 import com.divide2.dic.service.DicService;
+import com.divide2.search.Queryer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -57,6 +58,7 @@ public class DicController {
     @GetMapping("/page")
     public ResponseEntity<Page<Dic>> page(Map<String,String> conditons) {
         logger.info("query args in page : {}", conditons);
+//        Queryer<Dic> queryer = Queryer.wrap(conditons);
         return Responser.ok(dicServiceImpl.search(conditons));
     }
 }
