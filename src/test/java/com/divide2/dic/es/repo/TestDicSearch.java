@@ -44,7 +44,7 @@ public class TestDicSearch {
         Map<String, String> map = new HashMap<>();
         map.put("page", "0");
         map.put("size", "10");
-        map.put("groupCode", "gen");
+        map.put("groupCode", "de");
         dicService.search(map).forEach(System.out::println);
 
     }

@@ -27,7 +27,6 @@ public class Dic {
     @Id
     @GeneratedValue
     @org.springframework.data.annotation.Id
-    @Conditioner(way = SearchWay.RANGE,startName = "idStart",endName = "idEnd")
     private Integer id;
 
     @Column(name = "group_name")
