@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.core.query.IndexQuery;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -42,10 +43,9 @@ public class TestDicSearch {
     @Test
     public void testSearch() {
         Map<String, String> map = new HashMap<>();
-        map.put("page", "0");
-        map.put("size", "10");
+
         map.put("groupCode", "de");
-        dicService.search(map).forEach(System.out::println);
+        dicService.page(map, new PageRequest(0, 10)).forEach(System.out::println);
 
     }
 }
