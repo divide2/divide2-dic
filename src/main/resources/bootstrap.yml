@@ -6,4 +6,4 @@ spring:
       home
   cloud:
     config:
-      enabled: true
+      enabled: false

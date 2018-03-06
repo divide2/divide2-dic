@@ -17,10 +17,25 @@ logging:
     com.divide2: DEBUG
 spring:
   jpa:
-    database: mysql
-  data:
-    elasticsearch:
-      cluster-nodes: 127.0.0.1:9300
+    database-platform: POSTGRESQL
+    database: postgresql
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: bvvyeh288
+    url: jdbc:postgresql://localhost:5432/bvvy_divide2
+
+#  data:
+#    elasticsearch:
+#      cluster-nodes: 127.0.0.1:9300
 #eureka:
 
 #  instance:
