@@ -1,6 +1,10 @@
 package com.divide2.dic
 
+import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.*
+import org.springframework.web.reactive.function.server.ServerRequest
+import org.springframework.web.reactive.function.server.ServerResponse
+import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 /**
@@ -9,14 +13,15 @@ import reactor.core.publisher.Mono
  */
 @RestController
 @RequestMapping("/v1/dic")
-class DicController(val dicRepository: DicRepository) {
+class DicController(private val dicRepository: DicRepository) {
 
     @GetMapping("/all")
-    fun all(): Mono<List<Dic>> = Mono.empty()
+    fun all(serverRequest: ServerRequest): Mono<ServerResponse> =
+            ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(Flux.fromIterable(dicRepository.findAll()), Dic::class.java)
 
 
     @GetMapping("{id}")
-    fun get(@PathVariable id: Int?): Mono<Dic> = Mono.empty()
+    fun get(@PathVariable id: Int): Mono<Dic> = Mono.empty()
 
 
     @DeleteMapping("{id}")
