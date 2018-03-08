@@ -10,11 +10,11 @@ server:
 #    resource:
 #      user-info-uri: http://localhost:8901/me
 #Setting the logging levels for the service
-logging:
-  level:
-    com.netflix: WARN
-    org.springframework.web: WARN
-    com.divide2: DEBUG
+#logging:
+#  level:
+#    com.netflix: WARN
+#    org.springframework.web: WARN
+#    com.divide2: DEBUG
 spring:
   jpa:
     database-platform: POSTGRESQL

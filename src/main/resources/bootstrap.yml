@@ -3,7 +3,7 @@ spring:
     name: dicservice
   profiles:
     active:
-      home
-  cloud:
-    config:
-      enabled: false
+      default
+#  cloud:
+#    config:
+#      enabled: false
