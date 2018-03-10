@@ -1,11 +1,11 @@
-package com.divide2.dic
+package com.divide2.module.dic
 
 
 import javax.persistence.*
 
 /**
  * Created by bvvy on 2018/1/4.
- * com.divide2.dic.model
+ * com.divide2.module.dic.model
  */
 @Entity
 @Table(name = "sys_dic")

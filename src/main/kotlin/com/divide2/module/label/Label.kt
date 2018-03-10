@@ -1,10 +1,10 @@
-package com.divide2.label
+package com.divide2.module.label
 
 import javax.persistence.*
 
 /**
  * Created by bvvy on 2018/1/4.
- * com.divide2.dic.model
+ * com.divide2.module.dic.model
  */
 @Table(name = "sys_label")
 @Entity

@@ -1,4 +1,4 @@
-package com.divide2.label
+package com.divide2.module.label
 
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
