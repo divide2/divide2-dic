@@ -22,7 +22,7 @@ class DicController(val dicRepository: DicRepository) {
     @GetMapping("/{id}")
     fun get(@PathVariable id: Int) = Responser.ok(dicRepository.getOne(id))
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{ids}")
     fun delete(@PathVariable ids: String): ResponseEntity<Messager> {
         ids.split(COMMA).forEach { dicRepository.deleteById(it.toInt()) }
         return Responser.delete()
