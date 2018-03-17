@@ -7,3 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository
  * com.divide2.module.dic.repository
  */
 interface LabelRepository : JpaRepository<Label, Int>
+
+

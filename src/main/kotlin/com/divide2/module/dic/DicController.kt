@@ -40,7 +40,7 @@ class DicController(val dicRepository: DicRepository) {
         return Responser.update()
     }
 
-    @GetMapping("/page")
+    @GetMapping("/list")
     fun page(pageable: Pageable) = dicRepository.findAll(pageable)
 
 

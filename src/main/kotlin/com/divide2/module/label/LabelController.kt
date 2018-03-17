@@ -39,7 +39,7 @@ class LabelController(val labelRepository: LabelRepository) {
         return Responser.update()
     }
 
-    @GetMapping("/page")
+    @GetMapping("/list")
     fun page(pageable: Pageable) = labelRepository.findAll(pageable)
 
 
