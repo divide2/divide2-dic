@@ -16,5 +16,8 @@ class Label(
         @Column(name = "cn_label")
         var cnLabel: String = "",
 
+        @Column(name = "en_label")
+        var enLabel: String = "",
+
         var code: String = ""
 )
