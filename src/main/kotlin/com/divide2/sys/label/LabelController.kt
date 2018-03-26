@@ -1,4 +1,4 @@
-package com.divide2.module.label
+package com.divide2.sys.label
 
 import com.divide2.er.COMMA
 import com.divide2.er.Messager

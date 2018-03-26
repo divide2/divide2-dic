@@ -1,8 +1,8 @@
-package com.divide2.auth.user
+package com.divide2.auth
 
 
-import javax.persistence.*
 import java.time.LocalDateTime
+import javax.persistence.*
 
 @Entity
 @Table(name = "sys_user")

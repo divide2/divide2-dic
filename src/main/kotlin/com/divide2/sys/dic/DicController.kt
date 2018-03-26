@@ -1,4 +1,4 @@
-package com.divide2.module.dic
+package com.divide2.sys.dic
 
 import com.divide2.er.COMMA
 import com.divide2.er.Messager

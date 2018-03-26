@@ -1,4 +1,4 @@
-package com.divide2.module.dic
+package com.divide2.sys.dic
 
 import org.springframework.data.jpa.repository.JpaRepository
 

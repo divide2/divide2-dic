@@ -1,4 +1,4 @@
-package com.divide2.module.label
+package com.divide2.sys.label
 
 import javax.persistence.*
 
