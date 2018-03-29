@@ -16,7 +16,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 class WebSocketConfig : WebSocketMessageBrokerConfigurer {
 
     override fun registerStompEndpoints(registry: StompEndpointRegistry) {
-        registry.addEndpoint("/join").withSockJS()
+        registry.addEndpoint("/gs-guide-websocket").withSockJS()
     }
 
     override fun configureMessageBroker(registry: MessageBrokerRegistry) {

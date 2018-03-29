@@ -13,9 +13,11 @@ class WebSocketSecurityConfig : AbstractSecurityWebSocketMessageBrokerConfigurer
 
     override fun configureInbound(messages: MessageSecurityMetadataSourceRegistry) {
 
-        messages.simpSubscribeDestMatchers("/topic/**").permitAll()
-                .simpDestMatchers("/app/**").permitAll()
-
+        messages
+                .nullDestMatcher().authenticated()
+                .simpSubscribeDestMatchers("/app/**").permitAll()
+                .simpDestMatchers("/topic/**").permitAll()
+                .anyMessage().permitAll()
     }
 
 }

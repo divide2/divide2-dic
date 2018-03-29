@@ -22,7 +22,7 @@ class LoginConfig(val dataSource: DataSource) : WebSecurityConfigurerAdapter() {
                 .and()
                 .logout().and()
                 .authorizeRequests()
-                .antMatchers("/join", "/", "/login/**", "/v1/dic/all", "/v1/label/all")
+                .antMatchers("/gs-guide-websocket/**", "/", "/login/**", "/v1/dic/all", "/v1/label/all")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
