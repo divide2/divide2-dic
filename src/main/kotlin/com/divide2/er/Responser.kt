@@ -33,4 +33,8 @@ object Responser {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(Messager.of(code))
     }
 
+    fun conflict(code: ReturnCoder): ResponseEntity<Messager> {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(Messager.of(code))
+    }
+
 }

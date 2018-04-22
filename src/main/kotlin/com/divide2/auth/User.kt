@@ -15,6 +15,8 @@ class User(
 
         var password: String = "",
 
+        var nickname : String = "",
+
         var phone: String = "",
 
         var email: String = "",

@@ -13,7 +13,7 @@ class Messager(val code: String) {
         }
 
         fun of(returnCoder: ReturnCoder): Messager {
-            return Messager(returnCoder.name)
+            return Messager(returnCoder.msg)
         }
     }
 }

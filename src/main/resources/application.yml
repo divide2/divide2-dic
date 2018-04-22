@@ -1,15 +1,5 @@
 server:
   port: 11111
-github:
-  client:
-    clientId: 1c23891103858487501e
-    clientSecret: f33376b3bdf95b4c4ef2645b0358b183af8afb42
-    accessTokenUri: https://github.com/login/oauth/access_token
-    userAuthorizationUri: https://github.com/login/oauth/authorize
-    clientAuthenticationScheme: form
-  resource:
-    userInfoUri: https://api.github.com/user
-
 spring:
   jpa:
     database-platform: POSTGRESQL
@@ -22,6 +12,7 @@ spring:
             non_contextual_creation: true
     hibernate:
       ddl-auto: update
+    show-sql: true
   datasource:
     driver-class-name: org.postgresql.Driver
     username: postgres
@@ -34,7 +25,12 @@ spring:
           github:
             client-id: 1c23891103858487501e
             client-secret: f33376b3bdf95b4c4ef2645b0358b183af8afb42
-
+logging:
+  level:
+    org:
+      springframework:
+       web: debug
+       security: debug
 #  data:
 #    elasticsearch:
 #      cluster-nodes: 127.0.0.1:9300
