@@ -12,8 +12,8 @@ import org.springframework.stereotype.Controller
 class ChatController {
 
 
-    @MessageMapping("/greeting")
-    @SendTo("/topic/greetings")
+//    @MessageMapping("/greeting")
+//    @SendTo("/topic/greetings")
     fun greeting(): Chat {
         Thread.sleep(1000)
         return Chat("fred", "hello")

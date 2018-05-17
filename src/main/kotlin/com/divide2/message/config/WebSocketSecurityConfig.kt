@@ -8,8 +8,12 @@ import org.springframework.security.config.annotation.web.socket.AbstractSecurit
  * Created by bvvy on 2018/3/28.
  * com.divide2.auth.config
  */
-@Configuration
-class WebSocketSecurityConfig : AbstractSecurityWebSocketMessageBrokerConfigurer(){
+//@Configuration
+class WebSocketSecurityConfig : AbstractSecurityWebSocketMessageBrokerConfigurer() {
+
+    override fun sameOriginDisabled(): Boolean {
+        return true
+    }
 
     override fun configureInbound(messages: MessageSecurityMetadataSourceRegistry) {
 
